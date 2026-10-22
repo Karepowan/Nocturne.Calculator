@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background-color: #020617;
+    
+    background-size:
+        50px 50px,
+        700px 700px,
+        35px 35px,
+        23px 23px,
+        100% 100%;
+
+    background-position:
+        0 0,
+        25px 35px,
+        10px 15px,
+        5px 8px,
+        center;
+
+    font-family: Arial, sans-serif;
+}
+
+.kalkulator {
+    width: 300px;
+    padding: 20px;
+    background: #001942;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.884);
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 5px #38bdf8,
+        0 0 10px #0ea5e9,
+        0 0 20px #0284c7;
+}
+
+#layar {
+    width: 100%;
+    height: 65px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #0f172a;
+    color: #38bdf8;
+    text-align: right;
+    font-size: 28px;
+    box-shadow: 
+        inset 0 0 10px #0284c744,
+        0 0 8px #0284c744;
+    text-shadow:
+        0 0 1px #38bdf8,
+        0 0 3px #0ea5e9,
+        0 0 5px #0284c7;
+}
+
+.tombol {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #14289b;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 8px #14289b;
+}
+
+button:hover {
+    background: #2225dd;
+    transform: scale(1.04);
+    box-shadow:
+        0 0 10px #2225dd,
+        0 0 25px #14289b,
+        0 0 40px #14289b;
+}
+
+.hapus {
+    background: #dc2626;
+    height: auto;
+    box-shadow: 0 0 8px #dc2626;
+}
+
+.hapus:hover {
+    background: #fa2323;
+    box-shadow:
+        0 0 10px #fa2323,
+        0 0 25px #dc2626,
+        0 0 40px #dc2626;
+}
+
+.del {
+    background: #d97706;
+    height: auto;
+    box-shadow: 0 0 8px #d97706;
+}
+
+.del:hover {
+    background: #ff9f21;
+    box-shadow:
+        0 0 10px #ff9f21,
+        0 0 25px #d97706,
+        0 0 40px #d97706;
+}
+
+.hasil {
+    background: #0284c7;
+    grid-row: span 2;
+    height: auto;
+    box-shadow: 0 0 8px #0284c7
+}
+
+.hasil:hover {
+    background: #38bdf8;
+    box-shadow:
+        0 0 10px #38bdf8,
+        0 0 25px #0284c7,
+        0 0 40px #0284c7;
+
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #bae6fd;
+    animation: drift linear infinite, twinkle ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-20px, 10px);
+    }
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.kalkulator {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Bintang jatuh */
+.shooting-star {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    pointer-events: none;
+    z-index: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #bae6fd,
+        white
+    );
+
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px #7dd3fc);
+
+    transform: rotate(-35deg);
+    animation: shooting 1.2s linear forwards;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translate(0, 0) rotate(-35deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-350px, 220px) rotate(-35deg);
+        opacity: 0;
+    }
+}
+
+
+
+/* Membuat kalkulator responsif di HP */
+* {
+    box-sizing: border-box;
+}
+
+.kalkulator {
+    width: min(90%, 350px);
+    max-width: 350px;
+    margin: auto;
+}
+
+/* Ukuran layar kecil */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .kalkulator {
+        width: 100%;
+        max-width: 350px;
+        padding: 18px;
+    }
+
+    #layar {
+        width: 100%;
+        min-width: 0;
+        font-size: 24px;
+    }
+
+    button {
+        min-width: 0;
+        padding: 12px 6px;
+        font-size: 16px;
+    }
+}

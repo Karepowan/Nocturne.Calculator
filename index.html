@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="Kalkulator.css">
+</head>
+<body>
+    
+    <div class="kalkulator">
+        <h2>Kalkulator</h2>
+
+        <input type="text" id="layar" value="0" readonly>
+
+        <div class="tombol">
+            <button class="hapus" onclick="hapus()">C</button>
+            <button class="del" onclick="hapusSatu()">DEL</button>
+            <button onclick="pilihOperator('/')">÷</button>
+            <button onclick="pilihOperator('*')">×</button>
+
+            <button onclick="masukAngka('7')">7</button>
+            <button onclick="masukAngka('8')">8</button>
+            <button onclick="masukAngka('9')">9</button>
+            <button onclick="pilihOperator('-')">-</button>
+
+            <button onclick="masukAngka('4')">4</button>
+            <button onclick="masukAngka('5')">5</button>
+            <button onclick="masukAngka('6')">6</button>
+            <button onclick="pilihOperator('+')">+</button>
+
+            <button onclick="masukAngka('1')">1</button>
+            <button onclick="masukAngka('2')">2</button>
+            <button onclick="masukAngka('3')">3</button>
+            <button class="hasil" onclick="hitung()">=</button>
+
+            <button onclick="masukAngka('0')">0</button>
+            <button onclick="masukAngka('00')">00</button>
+            <button onclick="masukAngka('.')">.</button>
+
+        </div>
+
+    </div>
+
+    <script src="Kalkulator.js"></script>
+</body>
+</html>
